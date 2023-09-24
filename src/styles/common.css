@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root{
+    --header-height: 56px;
+
+    /*========== Colors ==========*/
+    --first-color: #8e46b3;
+    --black-color: #000000;
+    --black-color-light: #666666;
+    --white-color: #F2F2F2;
+    --title-color: #000000;
+    --text-color: #595959;
+    --text-color-light: #A3A3A3;
+    --body-color: #DEDEDE;
+    --container-color: #D4D4D4;
+
+    /*========== Font and typography ==========*/
+    --body-font: "Bai Jamjuree", sans-serif;
+    --biggest-font-size: 40px;
+    --h1-font-size: 28px;
+    --h2-font-size: 22px;
+    --h3-font-size: 18px;
+    --normal-font-size: 15px;
+    --small-font-size: 14px;
+    --smaller-font-size: 13px;
+
+    /*========== Font weight ==========*/
+    --font-light: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px){
+    :root{
+        --biggest-font-size: 72px;
+        --h1-font-size: 48px;
+        --h2-font-size: 32px;
+        --h3-font-size: 20px;
+        --normal-font-size: 16px;
+        --small-font-size: 14px;
+        --smaller-font-size: 12px;
+    }
+}
+
+/*=============== BASE ===============*/
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+.title{
+    color: var(--title-color);
+    font-weight: var(--font-bold);
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/*=============== THEME ===============*/
+
+
+/*========== Variables Dark theme ==========*/
+
+
+/*==========
+	Color changes in some parts of
+	the website, in dark theme
+==========*/
+
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container{
+    max-width: 1120px;
+    margin-inline: 24px;
+}
+
+.grid{
+    display: grid;
+    gap: 24px;
+}
+
+.section{
+    padding-block: 64px 32px;
+}
+
+.section__title-1,
+.section__title-2{
+    position: relative;
+    font-size: var(--h1-font-size);
+    width: max-content;
+    margin: 12px auto 32px;
+}
+
+.section__title-1 span,
+.section__title-2 span{
+    z-index: 5;
+    position: relative;
+}
+
+.section__title-1::after,
+.section__title-2::after{
+    content: "";
+    width: 40px;
+    height: 28px;
+    background-color: #FED8CD;
+    position: absolute;
+    top: -4px;
+    right: -8px;
+}
+
+.section__title-2::after{
+    top: initial;
+    bottom: -4px;
+}
+
+.geometric-box{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--first-color);
+    rotate: -30deg;
+}
+
+.geometric-box::after{
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 3px solid var(--black-color);
+    left: -5px;
+    top: -5px;
+}
+
+.main{
+    overflow: hidden; /* For animation ScrollReveal */
+}
