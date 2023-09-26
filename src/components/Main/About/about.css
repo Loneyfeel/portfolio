@@ -1,0 +1,83 @@
+.about{
+    background-color: var(--container-color);
+    transition: background-color 400ms;
+}
+.about__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.about__profile{
+    position: relative;
+    justify-content: center;
+    margin-block: 40px 50px;
+}
+.about__image{
+    width: 220px;
+}
+.about__img{
+    position: relative;
+    border: 4px solid var(--white-color);
+    z-index: 1;
+}
+.about__shadow,
+.about__line,
+.about__box{
+    position: absolute;
+}
+.about__shadow{
+    width: 180px;
+    height: 385px;
+    background-color: var(--body-color);
+    top: -40px;
+    right: -80px;
+    border-bottom: 4px solid var(--first-color);
+    transition: background-color 400ms;
+}
+.about__profile .geometric-box{
+    top: 25px;
+    right: -65px;
+}
+.about__line{
+    filter: invert(1);
+    right: -25px;
+    top: 100px;
+    transition: filter 400ms;
+}
+.about__box{
+    width: 40px;
+    height: 50px;
+    background-color: var(--first-color);
+    right: -10px;
+    bottom: 25px;
+}
+.about__info{
+    padding: 10px 0 0 15px;
+}
+.about__description{
+    position: relative;
+    color: var(--title-color);
+    margin-bottom: 25px;
+}
+.about__description::after{
+    content: '';
+    width: 20px;
+    height: 1px;
+    background-color: var(--title-color);
+    position: absolute;
+    left: -30px;
+    top: 10px;
+}
+.about__buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about__btn{
+    /*display: flex;*/
+    font-size: 17px;
+}
+.sendPlaneFillIcon{
+    width: 25px;
+    filter: invert(1);
+}

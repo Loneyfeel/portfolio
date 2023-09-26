@@ -71,6 +71,7 @@ body{
 .title{
     color: var(--title-color);
     font-weight: var(--font-bold);
+    cursor: default;
 }
 
 ul{
@@ -105,15 +106,10 @@ img{
     margin-inline: 24px;
 }
 
-.grid{
-    display: grid;
-    gap: 24px;
-}
-
 .section{
     padding-block: 64px 32px;
 }
-
+/*About me title*/
 .section__title-1,
 .section__title-2{
     position: relative;
@@ -122,26 +118,27 @@ img{
     margin: 12px auto 32px;
 }
 
-.section__title-1 span,
-.section__title-2 span{
-    z-index: 5;
+.section__title-1 p,
+.section__title-2 p{
     position: relative;
+    z-index: 10;
 }
 
-.section__title-1::after,
-.section__title-2::after{
+.section__title-1 p::after,
+.section__title-2 p::after{
     content: "";
     width: 40px;
     height: 28px;
-    background-color: #FED8CD;
+    background-color: #e1b5f7;
     position: absolute;
     top: -4px;
     right: -8px;
+    z-index: -1;
 }
 
-.section__title-2::after{
+.section__title-2 p::after{
     top: initial;
-    bottom: -4px;
+    bottom: -3px;
 }
 
 .geometric-box{
@@ -164,4 +161,19 @@ img{
 
 .main{
     overflow: hidden; /* For animation ScrollReveal */
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+    background-color: var(--black-color);
+    padding: 15px 20px;
+    color: var(--white-color);
+    font-weight: var(--font-medium);
+    transition: background-color 400ms;
+}
+.button:hover{
+    background-color: var(--first-color);
 }

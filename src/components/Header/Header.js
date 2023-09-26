@@ -1,13 +1,24 @@
 import './header.css'
-import CloseLineIcon from "remixicon-react/CloseLineIcon";
-import MenuLineIcon from "remixicon-react/MenuLineIcon";
-import {useState} from "react";
+import closeLineIcon from '../../resources/icons/close-line.svg'
+import menuLineIcon from '../../resources/icons/menu-line.svg'
+import {useState, useEffect} from "react";
 function Header(){
+    const [isScroll, setScrolled] = useState(false)
+    useEffect(() => {
+        const onScroll = () => {
+            if (window.scrollY > 50) {
+                setScrolled(true)
+            } else {
+                setScrolled(false)
+            }
+        }
+        window.addEventListener("scroll", onScroll)
+        return () => window.addEventListener("scroll", onScroll)
+    }, [])
     return (
         <>
-            <header className="header" id="header">
+            <header className={`header header${isScroll ? "_shadow" : ''}`} id="header">
                 <Navbar/>
-
             </header>
         </>
     )
@@ -48,13 +59,13 @@ function Navbar() {
                     </ul>
                     <div className="nav__close">
                         <div className="nav__close-btn" onClick={toggleMenu}>
-                            <CloseLineIcon/>
+                            <img className="closeLineIcon" src={closeLineIcon} alt=""/>
                         </div>
                     </div>
                 </div>
                 <div className="nav__buttons">
                     <div className="nav__toggle" onClick={toggleMenu}>
-                        <MenuLineIcon/>
+                        <img src={menuLineIcon} alt=""/>
                     </div>
                 </div>
             </nav>

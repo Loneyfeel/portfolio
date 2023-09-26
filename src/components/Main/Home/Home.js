@@ -2,6 +2,7 @@ import './home.css'
 import home_profile from '../../../resources/images/home-profile.jpg'
 import curved_arrow from '../../../resources/images/curved-arrow.svg'
 import random_lines from '../../../resources/images/random-lines.svg'
+import arrowDownSLineIcon from '../../../resources/icons/arrow-down-s-line.svg'
 function Home(){
     return (
         <>
@@ -25,8 +26,9 @@ function Home(){
                         </p>
                         <a href="#about" className="home__scroll">
                             <div className="home__scroll-box">
-
+                                <img className="arrowDownSLineIcon" src={arrowDownSLineIcon} alt=""/>
                             </div>
+                            <span className="home__scroll-text">Scroll down</span>
                         </a>
                     </div>
                 </div>
