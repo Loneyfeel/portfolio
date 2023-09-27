@@ -1,0 +1,188 @@
+.contact{
+    padding-bottom: 0;
+}
+.contact__container{
+    display: grid;
+    position: relative;
+    grid-template-rows: 300px max-content max-content;
+    row-gap: 0;
+}
+.contact__data{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: var(--container-color);
+    padding: 40px 25px 50px;
+    margin-left: auto;
+    z-index: 5;
+    border-bottom: 4px solid var(--first-color);
+    transition: background-color 400ms;
+}
+.contact__data .section__title-2{
+    margin: 0 0 25px;
+    transform: translateX(-50px);
+}
+.contact__description{
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    margin-bottom: 30px;
+}
+.contact__data .geometric-box{
+    top: 30px;
+    right: 40px;
+}
+.contact__mail{
+    position: relative;
+    background-color: var(--contact__mail-color);
+    padding: 80px 25px 40px;
+    margin-top: -40px;
+    transition: background-color 400ms;
+}
+.contact__title{
+    color: var(--white-color);
+    font-size: var(--h2-font-size);
+    margin-bottom: 30px;
+    text-align: center;
+}
+.contact__form,
+.contact__group{
+    display: grid;
+    row-gap: 20px;
+}
+.contact__form{
+    position: relative;
+}
+.contact__box{
+    position: relative;
+    width: 100%;
+    height: 70px;
+}
+.contact__input,
+.contact__button{
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    outline: none;
+    border: none;
+}
+.contact__input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--contact__mail-color);
+    border: 3px solid var(--black-color-light);
+    color: var(--white-color);
+    padding: 10px 15px;
+    transition: border 400ms, background-color 400ms;
+}
+.contact__input::placeholder{
+    color: var(--text-color-light);
+    transition: opacity 400ms;
+}
+.contact__input:focus{
+    border-color: var(--white-color);
+}
+.contact__input:-webkit-autofill{
+    transition: background-color 6000s, color 6000s;
+}
+.contact__label{
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    color: var(--white-color);
+    font-size: var(--small-font-size);
+    font-weight: var(--font-medium);
+    background-color: var(--contact__mail-color);
+    padding: 8px;
+    pointer-events: none;
+    transition: top 400ms, opacity 400ms, background-color 400ms;
+    opacity: 0;
+}
+.contact__form .contact__area{
+    height: 200px;
+}
+.contact__area textarea{
+    resize: none;
+    padding-top: 15px;
+}
+.contact__button{
+    background-color: var(--first-color);
+    cursor: pointer;
+}
+.contact__button:active{
+    background-color: var(--black-color);
+}
+.contact__button p{
+    padding-top: 4px;
+}
+/*Invisible placeholder*/
+.contact__input:focus::placeholder{
+    opacity: 0;
+}
+/*Move label up and sticky label*/
+.contact__input:focus + .contact__label,
+.contact__input:not(:placeholder-shown).contact__input:not(:focus) + .contact__label{
+    opacity: 1;
+    top: -15px;
+}
+.contact__social{
+    display: grid;
+    row-gap: 15px;
+    background-color: var(--contact__social-color);
+    padding-block: 15px 50px;
+    text-align: center;
+    transition: background-color 400ms;
+}
+.contact__social-arrow{
+    width: 32px;
+    margin: 0 auto;
+}
+.contact__social-data{
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+}
+.contact__social-description{
+    color: var(--text-color-light);
+    font-size: var(--small-font-size);
+    font-weight: var(--font-semi-bold);
+    margin-bottom: 10px;
+}
+.contact__social-links{
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+}
+.contact__social-link{
+    background-color: var(--black-color-light);
+    padding: 5px;
+    transition: background-color 400ms;
+}
+.contact__social-link:hover{
+    background-color: var(--first-color);
+}
+.contact__link-box{
+    filter: invert(1);
+    width: 40px;
+}
+@media screen and (max-width: 320px) {
+    .contact__data .section__title-2{
+        transform: translateX(0);
+    }
+
+}
+@media screen and (min-width: 576px){
+    .contact__data{
+        width: 350px;
+        padding: 60px 25px;
+        margin-inline: auto;
+    }
+    .contact__form{
+        width: 480px;
+        margin-inline: auto;
+    }
+    .contact__group{
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 15px;
+    }
+
+}

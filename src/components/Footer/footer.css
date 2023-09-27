@@ -1,0 +1,13 @@
+.footer{
+    background-color: var(--contact__mail-color);
+}
+.footer__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+}
+.footer__copyright{
+    color: var(--text-color-light);
+    font-size: var(--small-font-size);
+}

@@ -1,6 +1,6 @@
 import './projects.css'
 import githubFillIcon from '../../../resources/icons/github-fill.svg'
-import view_icon from '../../../resources/icons/view_icon.svg'
+import viewIcon from '../../../resources/icons/view_icon.svg'
 import project_1 from '../../../resources/images/projects/project-1.jpg'
 import project_2 from '../../../resources/images/projects/project-2.jpg'
 import project_3 from '../../../resources/images/projects/project-3.jpg'
@@ -24,6 +24,15 @@ const projectData = [
         gitLink: "",
         viewLink: "",
         status: "favorite",
+    },{
+        id:1,
+        img: project_1,
+        subTitle: "Website",
+        title:"Project 1",
+        description: "wasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwasdwasdwwdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdw",
+        gitLink: "",
+        viewLink: "",
+        status: "favorite",
     }, {
         id:2,
         img: project_2,
@@ -33,7 +42,34 @@ const projectData = [
         gitLink: "",
         viewLink: "",
         status: "learn",
+    },{
+        id:2,
+        img: project_2,
+        subTitle: "Website",
+        title:"Project Project",
+        description: "wasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwdwwasdwasdwasdwasdwv",
+        gitLink: "",
+        viewLink: "",
+        status: "learn",
     }, {
+        id:3,
+        img: project_3,
+        subTitle: "Website",
+        title:"Bee BeeEEE BEEEEEEE",
+        description: "wasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdw",
+        gitLink: "",
+        viewLink: "",
+        status: "in progress",
+    },{
+        id:3,
+        img: project_3,
+        subTitle: "Website",
+        title:"Bee BeeEEE BEEEEEEE",
+        description: "wasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdw",
+        gitLink: "",
+        viewLink: "",
+        status: "in progress",
+    },{
         id:3,
         img: project_3,
         subTitle: "Website",
@@ -118,7 +154,7 @@ function ProjectCard({projectImg,projectSubTitle,projectTitle,projectDecr,projec
                     </a>
                     <a href={projectView} target="_blank">
                         <div className="projects__link">
-                            <img src={view_icon} alt="" className="projects__link-icon"/>
+                            <img src={viewIcon} alt="" className="projects__link-icon"/>
                         </div>
                     </a>
                 </div>

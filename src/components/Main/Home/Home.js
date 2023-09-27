@@ -3,6 +3,7 @@ import home_profile from '../../../resources/images/home-profile.jpg'
 import curved_arrow from '../../../resources/images/curved-arrow.svg'
 import random_lines from '../../../resources/images/random-lines.svg'
 import arrowDownSLineIcon from '../../../resources/icons/arrow-down-s-line.svg'
+import {Link} from "react-scroll";
 function Home(){
     return (
         <>
@@ -24,12 +25,19 @@ function Home(){
                         <p className="home__description">
                             <b>Frontend developer</b>. I strive to create web applications that are not only colorful and modern, but also provide excellent user interaction. My goal is to provide users with websites that not only meet their needs, but also leave a pleasant impression.
                         </p>
-                        <a href="#about" className="home__scroll">
-                            <div className="home__scroll-box">
-                                <img className="arrowDownSLineIcon" src={arrowDownSLineIcon} alt=""/>
-                            </div>
-                            <span className="home__scroll-text">Scroll down</span>
-                        </a>
+                            <Link
+                                className="home__scroll"
+                                activeClass="active"
+                                to="about"
+                                spy={true}
+                                smooth={true}
+                                offset={-70}
+                                duration={300}>
+                                <div className="home__scroll-box">
+                                    <img className="arrowDownSLineIcon" src={arrowDownSLineIcon} alt=""/>
+                                </div>
+                                <span className="home__scroll-text">Scroll down</span>
+                            </Link>
                     </div>
                 </div>
             </section>

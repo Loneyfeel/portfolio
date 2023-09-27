@@ -1,4 +1,6 @@
 .about{
+    display: flex;
+    justify-content: center;
     background-color: var(--container-color);
     transition: background-color 400ms;
 }
@@ -39,7 +41,7 @@
     right: -65px;
 }
 .about__line{
-    filter: invert(1);
+    filter: invert(var(--one-to-zero-invert));
     right: -25px;
     top: 100px;
     transition: filter 400ms;
@@ -52,11 +54,11 @@
     bottom: 25px;
 }
 .about__info{
-    padding: 10px 0 0 15px;
+    padding: 20px 0 0 15px;
 }
 .about__description{
     position: relative;
-    color: var(--title-color);
+    color: var(--text-color);
     margin-bottom: 25px;
 }
 .about__description::after{
@@ -73,11 +75,23 @@
     justify-content: center;
     align-items: center;
 }
-.about__btn{
-    /*display: flex;*/
-    font-size: 17px;
-}
 .sendPlaneFillIcon{
     width: 25px;
     filter: invert(1);
+}
+@media screen and (max-width: 320px) {
+    .about__image{
+        width: 170px;
+    }
+    .about__shadow{
+        height: 320px;
+    }
+}
+@media screen and (min-width: 576px){
+    .about__container{
+        width: 400px;
+    }
+    .about__image{
+        width: 220px;
+    }
 }

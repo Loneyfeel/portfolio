@@ -1,0 +1,21 @@
+.button__scroll-up{
+    position: fixed;
+    right: 15px;
+    bottom: -50%;
+    background-color: var(--black-color);
+    display: inline-flex;
+    padding: 5px;
+    border: 1px solid var(--black-color-light);
+    z-index: var(--z-tooltip);
+    transition: bottom 400ms, transform 400ms, background-color 400ms;
+}
+.button__scroll-up:hover{
+    transform: translateY(-10px);
+}
+.scroll-up__btn-img{
+    filter: invert(1);
+    width: 30px;
+}
+.show-scroll{
+    bottom: 50px;
+}

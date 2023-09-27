@@ -36,10 +36,21 @@
     z-index: 5;
 }
 .skills__icon{
+    filter: invert(var(--zero-to-one-invert));
     height: 50px;
     width: 50px;
     margin-bottom: 5px;
 }
 .skills__title{
     font-size: 15px;
+}
+@media screen and (max-width: 320px) {
+    .skills__cards{
+        grid-template-columns: repeat(2, 120px);
+    }
+}
+@media screen and (max-width: 400px) {
+    .skills__cards{
+        grid-template-columns: repeat(2, 120px);
+    }
 }

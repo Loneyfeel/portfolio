@@ -1,12 +1,12 @@
 import './skills.css'
 import html5FillIcon from '../../../resources/icons/html5-fill.svg'
 import css3LineIcon from '../../../resources/icons/css3-fill.svg'
-import js_icon from '../../../resources/icons/js_icon.svg'
+import jsIcon from '../../../resources/icons/js_icon.svg'
 import reactjsFillIcon from '../../../resources/icons/reactjs-line.svg'
-import sass_icon from '../../../resources/icons/sass_icon.svg'
+import sassIcon from '../../../resources/icons/sass_icon.svg'
 import githubFillIcon from '../../../resources/icons/github-fill.svg'
 import npmjsLineIcon from '../../../resources/icons/npmjs-line.svg'
-import figma_icon from '../../../resources/icons/figma_icon.svg'
+import figmaIcon from '../../../resources/icons/figma_icon.svg'
 
 const cardData = [
     {
@@ -19,7 +19,7 @@ const cardData = [
         title:"CSS"
     },{
         id:3,
-        img: js_icon,
+        img: jsIcon,
         title:"JavaScript"
     },{
         id:4,
@@ -27,7 +27,7 @@ const cardData = [
         title:"React"
     },{
         id:5,
-        img: sass_icon,
+        img: sassIcon,
         title:"Sass"
     },{
         id:6,
@@ -39,7 +39,7 @@ const cardData = [
         title:"npm"
     },{
         id:8,
-        img: figma_icon,
+        img: figmaIcon,
         title:"Figma"
     }
 ]

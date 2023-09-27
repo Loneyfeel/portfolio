@@ -1,8 +1,14 @@
 import './header.css'
 import closeLineIcon from '../../resources/icons/close-line.svg'
 import menuLineIcon from '../../resources/icons/menu-line.svg'
+import moonIcon from '../../resources/icons/moon-line.svg'
+import sunIcon from '../../resources/icons/sun-line.svg'
+
 import {useState, useEffect} from "react";
+import {Link} from "react-scroll";
+
 function Header(){
+    //=========================================NAVBAR SHADOW
     const [isScroll, setScrolled] = useState(false)
     useEffect(() => {
         const onScroll = () => {
@@ -17,7 +23,7 @@ function Header(){
     }, [])
     return (
         <>
-            <header className={`header header${isScroll ? "_shadow" : ''}`} id="header">
+            <header className={`header ${isScroll ? "header_shadow" : ''}`} id="header">
                 <Navbar/>
             </header>
         </>
@@ -26,35 +32,118 @@ function Header(){
 export default Header
 
 function Navbar() {
+    //=========================================Show NAVBAR mobile
     const [showMenu, setShowMenu] = useState(false)
     const toggleMenu = () => {
         setShowMenu(!showMenu)
     }
+    //==========================================For dark theme
+    const setDarkMode = () => {
+        document.querySelector("body").setAttribute('data-theme', 'dark')
+        localStorage.setItem("selectedTheme","dark")
+    }
+    const setLightMode = () => {
+        document.querySelector("body").setAttribute('data-theme', 'light')
+        localStorage.setItem("selectedTheme","light")
+    }
+    const toggleTheme = (e) => {
+        if(e.target.checked) setDarkMode()
+        else setLightMode()
+    }
+    const selectedTheme = localStorage.getItem("selectedTheme")
+    if(selectedTheme === "dark"){
+        setDarkMode()
+    }
+    else {
+        setLightMode()
+    }
+
+    const [isDarkTheme, setMode] = useState((document.querySelector('[data-theme]').getAttribute('data-theme') === "dark"))
+    const toggleModeBtn = () => {
+        setMode(!isDarkTheme)
+    }
     return (
         <>
             <nav className="nav container">
-                <a href="#" className="nav__logo">
-                    <div className="nav__logo-circle">F</div>
-                    <div className="nav_logo-name">Filipp Gladishev</div>
-                </a>
+                    <Link
+                        className="nav__logo"
+                        activeClass="active"
+                        to="home"
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={300}
+                        onClick={toggleMenu}>
+                        <div className="nav__logo-circle">F</div>
+                        <div className="nav_logo-name">Filipp Gladishev</div>
+                    </Link>
                 <div className={`nav__menu ${showMenu ? "show-menu" : ''}`}>
                     <div className="nav__title">Menu</div>
                     <div className="title nav__name">Feel</div>
                     <ul className="nav__list">
                         <li className="nav__item">
-                            <a href="#home" className="nav__link" onClick={toggleMenu}>Home</a>
+                            <Link
+                                className="nav__link"
+                                activeClass="active"
+                                to="home"
+                                spy={true}
+                                smooth={true}
+                                offset={0}
+                                duration={300}>
+                                Home
+                            </Link>
                         </li>
                         <li className="nav__item">
-                            <a href="#about" className="nav__link" onClick={toggleMenu}>About me</a>
+                            <Link
+                                className="nav__link"
+                                activeClass="active"
+                                to="about"
+                                spy={true}
+                                smooth={true}
+                                offset={0}
+                                duration={300}
+                                onClick={toggleMenu}>
+                                About me
+                            </Link>
                         </li>
                         <li className="nav__item">
-                            <a href="#skills" className="nav__link" onClick={toggleMenu}>Skills</a>
+                            <Link
+                                className="nav__link"
+                                activeClass="active"
+                                to="skills"
+                                spy={true}
+                                smooth={true}
+                                offset={0}
+                                duration={300}
+                                onClick={toggleMenu}>
+                                Skills
+                            </Link>
                         </li>
                         <li className="nav__item">
-                            <a href="#projects" className="nav__link" onClick={toggleMenu}>Projects</a>
+                            <Link
+                                className="nav__link"
+                                activeClass="active"
+                                to="projects"
+                                spy={true}
+                                smooth={true}
+                                offset={0}
+                                duration={300}
+                                onClick={toggleMenu}>
+                                Projects
+                            </Link>
                         </li>
                         <li className="nav__item">
-                            <a href="#contact" className="nav__link" onClick={toggleMenu}>Contact me</a>
+                            <Link
+                                className="nav__link"
+                                activeClass="active"
+                                to="contact"
+                                spy={true}
+                                smooth={true}
+                                offset={0}
+                                duration={300}
+                                onClick={toggleMenu}>
+                                Contact me
+                            </Link>
                         </li>
                     </ul>
                     <div className="nav__close">
@@ -64,9 +153,17 @@ function Navbar() {
                     </div>
                 </div>
                 <div className="nav__buttons">
-                    <div className="nav__toggle" onClick={toggleMenu}>
-                        <img src={menuLineIcon} alt=""/>
-                    </div>
+                    <input
+                        className="darkMode-input"
+                        type="checkbox"
+                        id="mode-toggle"
+                        defaultChecked={selectedTheme === "dark"}
+                        onChange={toggleTheme}
+                    />
+                    <label htmlFor="mode-toggle" className="mode-toggle__label">
+                            <img src={`${isDarkTheme ? moonIcon : sunIcon}`} alt="Theme Mode" className="dark-mode__img" onClick={toggleModeBtn}/>
+                    </label>
+                    <img src={menuLineIcon} alt="" className="nav__toggle" onClick={toggleMenu}/>
                 </div>
             </nav>
         </>
