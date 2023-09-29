@@ -4,6 +4,8 @@ import viewIcon from '../../../resources/icons/view_icon.svg'
 import project_1 from '../../../resources/images/projects/project-1.jpg'
 import project_2 from '../../../resources/images/projects/project-2.jpg'
 import project_3 from '../../../resources/images/projects/project-3.jpg'
+import {motion} from "framer-motion";
+import {appCardAnimation} from '../../helpers/animation'
 
 const projectData = [
     {
@@ -15,8 +17,26 @@ const projectData = [
         gitLink: "",
         viewLink: "",
         status: "favorite",
+    },  {
+        id:2,
+        img: project_1,
+        subTitle: "Website",
+        title:"Project 1",
+        description: "wasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwdwwwwwwwwwwwwwwwwwwwwwwwwwsdwwasdwasdwasdwasdwwasdwasdwasdwasdwwdwwwwwwwwwwwwwwwwwwwwwwwwwsdwwasdwasdwasdwasdwwasdwasdwasdwasdwwdwwwwwwwwwwwwwwwwwwwwwwwwwsdwwasdwasdwasdwasdwwasdwasdwasdwasdwwdwwwwwwwwwwwwwwwwwwwwwwwwwsdwwasdwasdwasdwasdwwasdwasdwasdwasdwwdwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdw",
+        gitLink: "",
+        viewLink: "",
+        status: "favorite",
+    },  {
+        id:3,
+        img: project_1,
+        subTitle: "Website",
+        title:"Project 1",
+        description: "wasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwdwwwwwwwwwwwwwwwwwwwwwwwwwsdwwasdwasdwasdwasdwwasdwasdwasdwasdwwdwwwwwwwwwwwwwwwwwwwwwwwwwsdwwasdwasdwasdwasdwwasdwasdwasdwasdwwdwwwwwwwwwwwwwwwwwwwwwwwwwsdwwasdwasdwasdwasdwwasdwasdwasdwasdwwdwwwwwwwwwwwwwwwwwwwwwwwwwsdwwasdwasdwasdwasdwwasdwasdwasdwasdwwdwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdw",
+        gitLink: "",
+        viewLink: "",
+        status: "favorite",
     }, {
-        id:1,
+        id:4,
         img: project_1,
         subTitle: "Website",
         title:"Project 1",
@@ -25,7 +45,7 @@ const projectData = [
         viewLink: "",
         status: "favorite",
     },{
-        id:1,
+        id:5,
         img: project_1,
         subTitle: "Website",
         title:"Project 1",
@@ -34,25 +54,25 @@ const projectData = [
         viewLink: "",
         status: "favorite",
     }, {
-        id:2,
+        id:6,
         img: project_2,
         subTitle: "Website",
         title:"Project Project",
         description: "wasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwdwwasdwasdwasdwasdwv",
         gitLink: "",
         viewLink: "",
-        status: "learn",
+        status: "educational",
     },{
-        id:2,
+        id:7,
         img: project_2,
         subTitle: "Website",
         title:"Project Project",
         description: "wasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwdwwasdwasdwasdwasdwv",
         gitLink: "",
         viewLink: "",
-        status: "learn",
+        status: "educational",
     }, {
-        id:3,
+        id:8,
         img: project_3,
         subTitle: "Website",
         title:"Bee BeeEEE BEEEEEEE",
@@ -61,7 +81,7 @@ const projectData = [
         viewLink: "",
         status: "in progress",
     },{
-        id:3,
+        id:9,
         img: project_3,
         subTitle: "Website",
         title:"Bee BeeEEE BEEEEEEE",
@@ -70,7 +90,7 @@ const projectData = [
         viewLink: "",
         status: "in progress",
     },{
-        id:3,
+        id:10,
         img: project_3,
         subTitle: "Website",
         title:"Bee BeeEEE BEEEEEEE",
@@ -90,8 +110,16 @@ function Projects() {
                     <div className="projects__cards">
                         {projectData
                             .filter((cardData) => cardData.status === "favorite")
-                            .map((filteredData) => (
-                                <ProjectCard
+                            .map((filteredData,index) => (
+                                <motion.div
+                                    variants={appCardAnimation}
+                                    initial="initial"
+                                    whileInView="animate"
+                                    viewport={{
+                                        // once: true,
+                                    }}
+                                    custom={index}>
+                                    <ProjectCard
                                     key={filteredData.id}
                                     projectImg={filteredData.img}
                                     projectSubTitle={filteredData.subTitle}
@@ -100,13 +128,22 @@ function Projects() {
                                     projectGit={filteredData.gitLink}
                                     projectView={filteredData.viewLink}
                                 />
+                                </motion.div>
                             ))}
                     </div>
-                    <div className="title projects__title"><p>Learn</p></div>
+                    <div className="title projects__title"><p>Educational</p></div>
                     <div className="projects__cards">
                         {projectData
-                            .filter((cardData) => cardData.status === "learn")
-                            .map((filteredData) => (
+                            .filter((cardData) => cardData.status === "educational")
+                            .map((filteredData, index) => (
+                                <motion.div
+                                    variants={appCardAnimation}
+                                    initial="initial"
+                                    whileInView="animate"
+                                    viewport={{
+                                        // once: true,
+                                    }}
+                                    custom={index}>
                                 <ProjectCard
                                     key={filteredData.id}
                                     projectImg={filteredData.img}
@@ -116,13 +153,22 @@ function Projects() {
                                     projectGit={filteredData.gitLink}
                                     projectView={filteredData.viewLink}
                                 />
+                                </motion.div>
                             ))}
                     </div>
                     <div className="title projects__title"><p>In progress</p></div>
                     <div className="projects__cards">
                         {projectData
                             .filter((cardData) => cardData.status === "in progress")
-                            .map((filteredData) => (
+                            .map((filteredData, index) => (
+                            <motion.div
+                            variants={appCardAnimation}
+                            initial="initial"
+                            whileInView="animate"
+                            viewport={{
+                            // once: true,
+                        }}
+                            custom={index}>
                                 <ProjectCard
                                     key={filteredData.id}
                                     projectImg={filteredData.img}
@@ -132,6 +178,7 @@ function Projects() {
                                     projectGit={filteredData.gitLink}
                                     projectView={filteredData.viewLink}
                                 />
+                            </motion.div>
                             ))}
                     </div>
                 </div>

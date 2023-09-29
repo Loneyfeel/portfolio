@@ -5,6 +5,9 @@ import telegram_icon from '../../../resources/icons/telegram_icon.svg'
 import instagram_icon from '../../../resources/icons/instagram_icon.svg'
 import sendPlaneFillIcon from "../../../resources/icons/send-plane-fill.svg";
 import curved_arrow from '../../../resources/images/curved-arrow.svg'
+import {motion} from "framer-motion";
+import {appOnTheLeftAnimation, appOnTheRightAnimation} from '../../helpers/animation'
+
 function Contact() {
     const form = useRef();
     const sendEmail = (e) => {
@@ -21,17 +24,29 @@ function Contact() {
         <>
             <section className="contact section" id="contact">
                 <div className="contact__container">
-                    <div className="contact__data">
+                    <motion.div className="contact__data"
+                                variants={appOnTheLeftAnimation}
+                                initial="initial"
+                                whileInView="animate"
+                                viewport={{
+                                    // once: true,
+                                }}>
                         <div className="title section__title-2">
                             <p>Contact me</p>
                         </div>
                         <p className="contact__description">
-                            I read all the emails. Send me any message you want and I will answer you. Also, a good
+                            I read all the emails. Send me any message you want and I will answer you. <br/><br/> Also, a good
                             option would be to write to me in Telegram.
                         </p>
                         <div className="geometric-box"></div>
-                    </div>
-                    <div className="contact__mail">
+                    </motion.div>
+                    <motion.div className="contact__mail"
+                                variants={appOnTheRightAnimation}
+                                initial="initial"
+                                whileInView="animate"
+                                viewport={{
+                                    // once: true,
+                                }}>
                         <div className="title contact__title">
                             Send Me A Message
                         </div>
@@ -62,23 +77,23 @@ function Contact() {
                                 <img className="sendPlaneFillIcon" src={sendPlaneFillIcon} alt=""/><p>Contact me</p>
                             </button>
                         </form>
+                    </motion.div>
+                </div>
+                <div className="contact__social">
+                    <img src={curved_arrow} alt="" className="contact__social-arrow"/>
+                    <div className="contact__social-data">
+                        <p className="contact__social-description">
+                            Write me on my social networks
+                        </p>
                     </div>
-                    <div className="contact__social">
-                        <img src={curved_arrow} alt="" className="contact__social-arrow"/>
-                        <div className="contact__social-data">
-                            <p className="contact__social-description">
-                                Write me on my social networks
-                            </p>
-                        </div>
-                        <div className="contact__social-links">
-                            <a href="https://t.me/Feel_moor/" target="_blank" className="contact__social-link">
-                                <div className="contact__link-box"><img src={telegram_icon} alt=""/></div>
-                            </a>
-                            <a href="https://instagram.com/_m_o_o_r_?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"
-                               className="contact__social-link">
-                                <div className="contact__link-box"><img src={instagram_icon} alt=""/></div>
-                            </a>
-                        </div>
+                    <div className="contact__social-links">
+                        <a href="https://t.me/Feel_moor/" target="_blank" className="contact__social-link">
+                            <div className="contact__link-box"><img src={telegram_icon} alt=""/></div>
+                        </a>
+                        <a href="https://instagram.com/_m_o_o_r_?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"
+                           className="contact__social-link">
+                            <div className="contact__link-box"><img src={instagram_icon} alt=""/></div>
+                        </a>
                     </div>
                 </div>
             </section>

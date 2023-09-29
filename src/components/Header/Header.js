@@ -4,7 +4,7 @@ import menuLineIcon from '../../resources/icons/menu-line.svg'
 import moonIcon from '../../resources/icons/moon-line.svg'
 import sunIcon from '../../resources/icons/sun-line.svg'
 
-import {useState, useEffect} from "react";
+import {useState, useEffect, useRef} from "react";
 import {Link} from "react-scroll";
 
 function Header(){
@@ -62,6 +62,26 @@ function Navbar() {
     const toggleModeBtn = () => {
         setMode(!isDarkTheme)
     }
+
+    //=========================================Close Navbar outside Navbar
+    const closeRef = useRef(null)
+    useEffect(() => {
+        // Обработчик события для клика на документе
+        const handleClickOutside = (event) => {
+            if (closeRef.current && !closeRef.current.contains(event.target) && showMenu) {
+                toggleMenu();
+            }
+        };
+
+        // Обработчик события при монтировании компонента
+        document.addEventListener('mousedown', handleClickOutside);
+
+        // Удаляем обработчик события при размонтировании компонента
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [showMenu]);
+
     return (
         <>
             <nav className="nav container">
@@ -71,13 +91,13 @@ function Navbar() {
                         to="home"
                         spy={true}
                         smooth={true}
-                        offset={-70}
+                        offset={0}
                         duration={300}
                         onClick={toggleMenu}>
                         <div className="nav__logo-circle">F</div>
                         <div className="nav_logo-name">Filipp Gladishev</div>
                     </Link>
-                <div className={`nav__menu ${showMenu ? "show-menu" : ''}`}>
+                <div className={`nav__menu ${showMenu ? "show-menu" : ''}`} ref={closeRef}>
                     <div className="nav__title">Menu</div>
                     <div className="title nav__name">Feel</div>
                     <ul className="nav__list">
@@ -89,7 +109,8 @@ function Navbar() {
                                 spy={true}
                                 smooth={true}
                                 offset={0}
-                                duration={300}>
+                                duration={300}
+                                onClick={toggleMenu}>
                                 Home
                             </Link>
                         </li>
@@ -100,7 +121,7 @@ function Navbar() {
                                 to="about"
                                 spy={true}
                                 smooth={true}
-                                offset={0}
+                                offset={-0}
                                 duration={300}
                                 onClick={toggleMenu}>
                                 About me
@@ -134,7 +155,7 @@ function Navbar() {
                         </li>
                         <li className="nav__item">
                             <Link
-                                className="nav__link"
+                                className="nav__link nav__link-button-contact"
                                 activeClass="active"
                                 to="contact"
                                 spy={true}

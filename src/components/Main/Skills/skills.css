@@ -1,3 +1,8 @@
+.skills{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .skills__container{
     display: flex;
     justify-content: center;
@@ -37,20 +42,51 @@
 }
 .skills__icon{
     filter: invert(var(--zero-to-one-invert));
-    height: 50px;
     width: 50px;
+    height: 50px;
     margin-bottom: 5px;
 }
 .skills__title{
-    font-size: 15px;
-}
-@media screen and (max-width: 320px) {
-    .skills__cards{
-        grid-template-columns: repeat(2, 120px);
-    }
+    font-size: var(--small-font-size);
 }
 @media screen and (max-width: 400px) {
     .skills__cards{
         grid-template-columns: repeat(2, 120px);
+    }
+}
+@media screen and (min-width: 768px){
+    .skills__cards{
+        grid-template-columns: repeat(4, 120px);
+    }
+}
+@media screen and (min-width: 1024px){
+    .skills__cards{
+        grid-template-columns: repeat(5, 150px);
+        gap: 25px;
+    }
+    .skills__border {
+        border: 5px solid var(--first-color);
+    }
+    .skills__content{
+        width: 150px;
+        height: 150px;
+        border: 5px solid var(--black-color);
+    }
+    .skills__icon{
+        width: 70px;
+        height: 70px;
+    }
+    .skills__title{
+        font-size: var(--normal-font-size);
+    }
+}
+@media screen and (min-width: 1600px){
+    .skills__cards{
+        grid-template-columns: repeat(6, 150px);
+    }
+}
+@media screen and (min-width: 1920px){
+    .skills__cards{
+        grid-template-columns: repeat(7, 150px);
     }
 }

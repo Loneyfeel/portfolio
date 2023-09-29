@@ -11,3 +11,8 @@
     color: var(--text-color-light);
     font-size: var(--small-font-size);
 }
+@media screen and (min-width: 768px){
+    .footer__copyright{
+        font-size: var(--normal-font-size);
+    }
+}

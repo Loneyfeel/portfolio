@@ -19,3 +19,24 @@
 .show-scroll{
     bottom: 50px;
 }
+@media screen and (min-width: 576px){
+    .scroll-up__btn-img{
+        width: 40px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .button__scroll-up {
+        right: 25px;
+    }
+    .scroll-up__btn-img{
+        width: 50px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .button__scroll-up {
+        right: 40px;
+    }
+    .show-scroll{
+        bottom: 100px;
+    }
+}
