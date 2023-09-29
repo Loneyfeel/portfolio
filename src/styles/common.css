@@ -126,7 +126,7 @@ img{
     margin-inline: 20px;
 }
 .section{
-    padding-block: 64px 32px;
+    padding-block: 65px 35px;
     overflow: hidden;
 }
 /*About me title*/
@@ -222,7 +222,7 @@ img{
         margin-inline: 25px;
     }
     .section{
-        padding-block: 90px 60px;
+        padding-block: 105px 75px;
     }
     .section__title-1 p::after,
     .section__title-2 p::after{

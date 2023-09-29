@@ -168,6 +168,13 @@
     filter: invert(1);
     width: 40px;
 }
+.contact__message{
+    color: var(--white-color);
+    font-size: var(--small-font-size);
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+}
 @media screen and (max-width: 320px) {
     .contact__data .section__title-2{
         transform: translateX(0);
@@ -230,7 +237,7 @@
     .contact__mail{
         grid-column: 2/3;
         grid-row: 1/3;
-        padding: 120px 100px 100px 100px;
+        padding: 100px 100px 80px 100px;
         margin-top: 0;
     }
     .contact__title{

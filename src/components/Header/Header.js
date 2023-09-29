@@ -91,7 +91,7 @@ function Navbar() {
                         to="home"
                         spy={true}
                         smooth={true}
-                        offset={0}
+                        offset={-50}
                         duration={300}
                         onClick={toggleMenu}>
                         <div className="nav__logo-circle">F</div>
@@ -108,7 +108,7 @@ function Navbar() {
                                 to="home"
                                 spy={true}
                                 smooth={true}
-                                offset={0}
+                                offset={-50}
                                 duration={300}
                                 onClick={toggleMenu}>
                                 Home
@@ -121,7 +121,7 @@ function Navbar() {
                                 to="about"
                                 spy={true}
                                 smooth={true}
-                                offset={-0}
+                                offset={-50}
                                 duration={300}
                                 onClick={toggleMenu}>
                                 About me
@@ -134,7 +134,7 @@ function Navbar() {
                                 to="skills"
                                 spy={true}
                                 smooth={true}
-                                offset={0}
+                                offset={-50}
                                 duration={300}
                                 onClick={toggleMenu}>
                                 Skills
@@ -147,7 +147,7 @@ function Navbar() {
                                 to="projects"
                                 spy={true}
                                 smooth={true}
-                                offset={0}
+                                offset={-50}
                                 duration={300}
                                 onClick={toggleMenu}>
                                 Projects
@@ -160,7 +160,7 @@ function Navbar() {
                                 to="contact"
                                 spy={true}
                                 smooth={true}
-                                offset={0}
+                                offset={-50}
                                 duration={300}
                                 onClick={toggleMenu}>
                                 Contact me

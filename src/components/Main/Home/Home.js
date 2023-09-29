@@ -52,7 +52,7 @@ function Home(){
                                 to="about"
                                 spy={true}
                                 smooth={true}
-                                offset={0}
+                                offset={-50}
                                 duration={300}>
                                 <div className="home__scroll-box">
                                     <img className="arrowDownSLineIcon" src={arrowDownSLineIcon} alt=""/>

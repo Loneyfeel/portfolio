@@ -17,7 +17,7 @@ function About(){
                         initial="initial"
                         whileInView="animate"
                         viewport={{
-                            once: true,
+                            // once: true,
                         }}>
                         <p>About Me</p>
                     </motion.div>

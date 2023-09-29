@@ -12,6 +12,7 @@
     display: grid;
     grid-template-columns: repeat(3, 120px);
     gap: 15px;
+    /*overflow: hidden;*/
 }
 .skills__card{
     position: relative;

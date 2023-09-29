@@ -121,7 +121,7 @@
         width: 220px;
     }
 }
-@media screen and (min-height: 10px){
+@media screen and (min-height: 750px){
     .home.section{
         padding-block: 150px 100px;
     }

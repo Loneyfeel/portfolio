@@ -31,7 +31,7 @@ export const appOnTheRightAnimation = {
 export const appCardAnimation = {
     initial: {
         opacity: 0,
-        y: -50,
+        y: -30,
     },
     animate: (index: number) => ({
         opacity: 1,

@@ -9,15 +9,21 @@ import {motion} from "framer-motion";
 import {appOnTheLeftAnimation, appOnTheRightAnimation} from '../../helpers/animation'
 
 function Contact() {
+    const contactForm = document.getElementById('contact-form')
+    const contactMessage = document.getElementById('contact-message')
     const form = useRef();
     const sendEmail = (e) => {
         e.preventDefault();
 
         emailjs.sendForm('service_mdfo5lp', 'template_c2o1pnl', form.current, 'WPhtvTnUlUnxyLp6y')
             .then((result) => {
-                console.log(result.text);
+                contactMessage.textContent = 'Message sent successfully ✅'
+                setTimeout(() => {
+                    contactMessage.textContent = ''
+                }, 5000)
+                contactForm.reset()
             }, (error) => {
-                console.log(error.text);
+                contactMessage.textContent = 'Message not sent (service error) ❌'
             });
     };
     return (
@@ -50,7 +56,7 @@ function Contact() {
                         <div className="title contact__title">
                             Send Me A Message
                         </div>
-                        <form action="" className="contact__form" id="contact__form" ref={form} onSubmit={sendEmail}>
+                        <form action="" className="contact__form" id="contact-form" ref={form} onSubmit={sendEmail}>
                             <div className="contact__group">
                                 <div className="contact__box">
                                     <input type="text" name="user_name" className="contact__input" id="name" required
@@ -73,6 +79,7 @@ function Contact() {
                                           placeholder="Message"></textarea>
                                 <label htmlFor="message" className="contact__label">Message</label>
                             </div>
+                            <p className="contact__message" id="contact-message"></p>
                             <button type="submit" value="Send" className="contact__button button">
                                 <img className="sendPlaneFillIcon" src={sendPlaneFillIcon} alt=""/><p>Contact me</p>
                             </button>
