@@ -211,6 +211,7 @@
         background-color: var(--black-color);
         color: var(--white-color);
         padding: 15px 25px;
+        transition: color 400ms, background-color 400ms;
     }
     .nav__link-button-contact::before,
     .nav__link-button-contact::after{
@@ -218,9 +219,10 @@
     }
     .nav__link-button-contact:hover{
         color: var(--white-color);
+        background-color: var(--black-color-light);
     }
     .nav__link-button-contact:active{
-        background-color: var(--black-color-light);
+        background-color: var(--text-color-light);
     }
     .nav__buttons{
         margin-right: 20px;

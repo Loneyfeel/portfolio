@@ -62,7 +62,7 @@ function Skills() {
                                     initial="initial"
                                     whileInView="animate"
                                     viewport={{
-                                        // once: true,
+                                        once: true,
                                     }}
                                     custom={index}>
                             <SkillsCard
@@ -82,12 +82,12 @@ export default Skills
 
 function SkillsCard({ cardImg, cardTitle}) {
     return (
-        <motion.article className="skills__card"                       >
+        <article className="skills__card">
             <div className="skills__border"></div>
             <div className="skills__content">
                 <img className="skills__icon" src={cardImg} alt=""/>
                 <div className="title skills__title">{cardTitle}</div>
             </div>
-        </motion.article>
+        </article>
     )
 }

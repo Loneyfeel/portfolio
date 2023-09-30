@@ -105,12 +105,11 @@
     resize: none;
     padding-top: 15px;
 }
-.contact__button{
-    background-color: var(--first-color);
-    cursor: pointer;
+.contact__button:hover{
+    background-color: var(--black-color-light);
 }
 .contact__button:active{
-    background-color: var(--black-color);
+    background-color: var(--container-color);
 }
 .contact__button p{
     padding-top: 4px;
@@ -224,6 +223,14 @@
     }
     .contact__form{
         margin-inline: auto;
+    }
+    .contact__data .geometric-box{
+        width: 25px;
+        height: 25px;
+    }
+    .contact__data .geometric-box::after{
+        top: 5px;
+        left: 5px;
     }
 }
 @media screen and (min-width: 1150px){

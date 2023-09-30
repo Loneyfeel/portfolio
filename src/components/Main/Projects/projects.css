@@ -6,10 +6,12 @@
     transition: background-color 400ms;
 }
 .projects__title{
+    position: relative;
     align-self: flex-start;
     font-size: 25px;
     padding: 30px 0 20px 0;
     width: 50%;
+    left: 13px;
 }
 .projects__title p{
     background: linear-gradient(90deg,
@@ -29,9 +31,6 @@
     width: 100%;
     padding: 15px 15px 30px;
     transition: background-color 400ms;
-}
-.projects__card:hover{
-    background-color: var(--projects__card-color);
 }
 .projects__image{
     display: flex;
@@ -116,9 +115,20 @@
         grid-template-columns: repeat(2, 270px);
     }
 }
+@media screen and (max-width: 576px){
+    .projects__card-active{
+        background-color: var(--projects__card-color);
+    }
+    .projects__card-inactive{
+        background-color: transparent;
+    }
+}
 @media screen and (min-width: 768px){
     .projects__cards{
         grid-template-columns: repeat(2, 350px);
+    }
+    .projects__card:hover{
+        background-color: var(--projects__card-color);
     }
 }
 @media screen and (min-width: 1024px){

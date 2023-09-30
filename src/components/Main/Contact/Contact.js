@@ -1,5 +1,5 @@
 import './contact.css'
-import React, { useRef } from 'react';
+import React, {useRef, useState} from 'react';
 import emailjs from '@emailjs/browser';
 import telegram_icon from '../../../resources/icons/telegram_icon.svg'
 import instagram_icon from '../../../resources/icons/instagram_icon.svg'
@@ -9,23 +9,37 @@ import {motion} from "framer-motion";
 import {appOnTheLeftAnimation, appOnTheRightAnimation} from '../../helpers/animation'
 
 function Contact() {
-    const contactForm = document.getElementById('contact-form')
-    const contactMessage = document.getElementById('contact-message')
-    const form = useRef();
+    const [message, setMessage] = useState('')
+    const form = useRef()
+    const [formData, setFormData] = useState({
+        user_name: '',
+        user_email: '',
+        user_subject: '',
+        message: '',
+    })
     const sendEmail = (e) => {
-        e.preventDefault();
-
+        e.preventDefault()
         emailjs.sendForm('service_mdfo5lp', 'template_c2o1pnl', form.current, 'WPhtvTnUlUnxyLp6y')
-            .then((result) => {
-                contactMessage.textContent = 'Message sent successfully ✅'
+            .then(() => {
+                setMessage('Message sent successfully ✅')
                 setTimeout(() => {
-                    contactMessage.textContent = ''
-                }, 5000)
-                contactForm.reset()
-            }, (error) => {
-                contactMessage.textContent = 'Message not sent (service error) ❌'
-            });
-    };
+                    setMessage('')
+                }, 5000);
+                setFormData({
+                    user_name: '',
+                    user_email: '',
+                    user_subject: '',
+                    message: '',
+                })
+            })
+            .catch(() => {
+                setMessage('Message not sent (service error) ❌')
+            })
+    }
+    const handleInputChange = (e) => {
+        const { name, value } = e.target
+        setFormData({ ...formData, [name]: value })
+    }
     return (
         <>
             <section className="contact section" id="contact">
@@ -35,7 +49,7 @@ function Contact() {
                                 initial="initial"
                                 whileInView="animate"
                                 viewport={{
-                                    // once: true,
+                                    once: true,
                                 }}>
                         <div className="title section__title-2">
                             <p>Contact me</p>
@@ -51,7 +65,7 @@ function Contact() {
                                 initial="initial"
                                 whileInView="animate"
                                 viewport={{
-                                    // once: true,
+                                    once: true,
                                 }}>
                         <div className="title contact__title">
                             Send Me A Message
@@ -60,26 +74,26 @@ function Contact() {
                             <div className="contact__group">
                                 <div className="contact__box">
                                     <input type="text" name="user_name" className="contact__input" id="name" required
-                                           placeholder="Name"/>
+                                           placeholder="Name" value={formData.user_name} onChange={handleInputChange}/>
                                     <label htmlFor="name" className="contact__label">Name</label>
                                 </div>
                                 <div className="contact__box">
                                     <input type="email" name="user_email" className="contact__input" id="email" required
-                                           placeholder="Email Address"/>
+                                           placeholder="Email Address" value={formData.user_email} onChange={handleInputChange}/>
                                     <label htmlFor="email" className="contact__label">Email Address</label>
                                 </div>
                             </div>
                             <div className="contact__box">
                                 <input type="subject" name="user_subject" className="contact__input" id="subject"
-                                       required placeholder="Subject"/>
+                                       required placeholder="Subject" value={formData.user_subject} onChange={handleInputChange}/>
                                 <label htmlFor="subject" className="contact__label">Subject</label>
                             </div>
                             <div className="contact__box contact__area">
                                 <textarea name="message" id="message" className="contact__input" required
-                                          placeholder="Message"></textarea>
+                                          placeholder="Message" value={formData.message} onChange={handleInputChange}/>
                                 <label htmlFor="message" className="contact__label">Message</label>
                             </div>
-                            <p className="contact__message" id="contact-message"></p>
+                            <p className="contact__message" id="contact-message">{message}</p>
                             <button type="submit" value="Send" className="contact__button button">
                                 <img className="sendPlaneFillIcon" src={sendPlaneFillIcon} alt=""/><p>Contact me</p>
                             </button>

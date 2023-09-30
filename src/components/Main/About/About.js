@@ -17,7 +17,7 @@ function About(){
                         initial="initial"
                         whileInView="animate"
                         viewport={{
-                            // once: true,
+                            once: true,
                         }}>
                         <p>About Me</p>
                     </motion.div>
@@ -27,7 +27,7 @@ function About(){
                              initial="initial"
                              whileInView="animate"
                              viewport={{
-                                 // once: true,
+                                 once: true,
                              }}>
                             <img src={about_profile} alt="" className="about__img"/>
                             <div className="about__shadow">
@@ -42,7 +42,7 @@ function About(){
                          initial="initial"
                          whileInView="animate"
                          viewport={{
-                             // once: true,
+                             once: true,
                          }}>
                     <div className="about__description">
                         I am passionate about creating <b>Web pages</b> with UI/UX. I do my projects as best as possible. I am convinced that a successful frontend developer should not only create beautiful interfaces, but also make them intuitive and user-friendly.<br/><br/>I am <b>always ready for new growth opportunities</b> in frontend development. If you have interesting projects or ideas, feel free to contact me. Let's make the internet better together!

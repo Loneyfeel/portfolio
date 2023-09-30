@@ -182,6 +182,8 @@
     .geometric-box::after{
         width: 24px;
         height: 24px;
+        top: -6px;
+        left: -6px;
     }
     .home__name,
     .home__description{

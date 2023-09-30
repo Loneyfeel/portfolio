@@ -12,22 +12,16 @@ function Home(){
         <>
             <section className="home section" id="home">
                 <div className="home__container container">
-                    <motion.div className="title home__name"
-                                variants={appOnTheRightAnimation}
-                                initial="initial"
-                                whileInView="animate"
-                                viewport={{
-                                    // once: true,
-                                }}>
+                    <div className="title home__name">
                         Filipp Gladishev
-                    </motion.div>
+                    </div>
                     <div className="home__profile">
                         <motion.div className="home__image"
                                     variants={appOnTheLeftAnimation}
                                     initial="initial"
                                     whileInView="animate"
                                     viewport={{
-                                        // once: true,
+                                        once: true,
                                     }}>
                             <img src={home_profile} alt="" className="home__img"/>
                             <div className="home__shadow"></div>
@@ -41,7 +35,7 @@ function Home(){
                                 initial="initial"
                                 whileInView="animate"
                                 viewport={{
-                                    // once: true,
+                                    once: true,
                                 }}>
                         <p className="home__description">
                             <b>Frontend developer</b>. I strive to create web applications that are not only colorful and modern, but also provide excellent user interaction. My goal is to provide users with websites that not only meet their needs, but also leave a pleasant impression.

@@ -8,6 +8,7 @@
     border: 1px solid var(--black-color-light);
     z-index: var(--z-tooltip);
     transition: bottom 400ms, transform 400ms, background-color 400ms;
+    cursor: pointer;
 }
 .button__scroll-up:hover{
     transform: translateY(-10px);

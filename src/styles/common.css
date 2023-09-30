@@ -163,8 +163,8 @@ img{
 
 .geometric-box{
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 21px;
+    height: 21px;
     background-color: var(--first-color);
     rotate: -30deg;
 }
@@ -188,15 +188,19 @@ img{
     justify-content: center;
     align-items: center;
     column-gap: 5px;
-    background-color: var(--black-color);
+    background-color: var(--first-color);
     padding: 15px 20px;
     color: var(--white-color);
     font-weight: var(--font-medium);
     font-size: 17px;
     transition: background-color 400ms;
+    cursor: pointer;
 }
 .button:hover{
-    background-color: var(--first-color);
+    background-color: var(--black-color);
+}
+.button:active{
+    background-color: var(--black-color-light);
 }
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar{

@@ -6,6 +6,7 @@ import project_2 from '../../../resources/images/projects/project-2.jpg'
 import project_3 from '../../../resources/images/projects/project-3.jpg'
 import {motion} from "framer-motion";
 import {appCardAnimation} from '../../helpers/animation'
+import { useInView } from 'react-intersection-observer';
 
 const projectData = [
     {
@@ -116,7 +117,7 @@ function Projects() {
                                     initial="initial"
                                     whileInView="animate"
                                     viewport={{
-                                        // once: true,
+                                        once: true,
                                     }}
                                     custom={index}>
                                     <ProjectCard
@@ -141,7 +142,7 @@ function Projects() {
                                     initial="initial"
                                     whileInView="animate"
                                     viewport={{
-                                        // once: true,
+                                        once: true,
                                     }}
                                     custom={index}>
                                 <ProjectCard
@@ -166,7 +167,7 @@ function Projects() {
                             initial="initial"
                             whileInView="animate"
                             viewport={{
-                            // once: true,
+                            once: true,
                         }}
                             custom={index}>
                                 <ProjectCard
@@ -189,8 +190,14 @@ function Projects() {
 export default Projects
 
 function ProjectCard({projectImg,projectSubTitle,projectTitle,projectDecr,projectGit,projectView}) {
+    // Используем хук useInView для отслеживания видимости элемента
+    const [ref, inView] = useInView({
+        triggerOnce: false, // Чтобы событие сработало только один раз
+        threshold: 0.25, // Задаем порог видимости (от 0 до 1)
+    });
+    const bgcProjectClass = inView ? 'projects__card-active' : 'projects__card-inactive';
     return (
-        <div className="projects__card">
+        <div className={`projects__card ${bgcProjectClass}`} ref={ref}>
             <div className="projects__image">
                 <img src={projectImg} alt="" className="projects__img"/>
                 <div className="projects__links">
