@@ -8,99 +8,6 @@ import { useInView } from 'react-intersection-observer';
 
 import {projectData} from './projectData'
 
-// const projectData = [
-//     {
-//         id:1,
-//         img: project_1,
-//         subTitle: "Website",
-//         title:"Project 1",
-//         description: "",
-//         gitLink: "",
-//         viewLink: "",
-//         status: "favorite",
-//     },  {
-//         id:2,
-//         img: project_1,
-//         subTitle: "Website",
-//         title:"Project 1",
-//         description: "wasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwdwwwwwwwwwwwwwwwwwwwwwwwwwsdwwasdwasdwasdwasdwwasdwasdwasdwasdwwdwwwwwwwwwwwwwwwwwwwwwwwwwsdwwasdwasdwasdwasdwwasdwasdwasdwasdwwdwwwwwwwwwwwwwwwwwwwwwwwwwsdwwasdwasdwasdwasdwwasdwasdwasdwasdwwdwwwwwwwwwwwwwwwwwwwwwwwwwsdwwasdwasdwasdwasdwwasdwasdwasdwasdwwdwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdw",
-//         gitLink: "",
-//         viewLink: "",
-//         status: "favorite",
-//     },  {
-//         id:3,
-//         img: project_1,
-//         subTitle: "Website",
-//         title:"Project 1",
-//         description: "wasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwdwwwwwwwwwwwwwwwwwwwwwwwwwsdwwasdwasdwasdwasdwwasdwasdwasdwasdwwdwwwwwwwwwwwwwwwwwwwwwwwwwsdwwasdwasdwasdwasdwwasdwasdwasdwasdwwdwwwwwwwwwwwwwwwwwwwwwwwwwsdwwasdwasdwasdwasdwwasdwasdwasdwasdwwdwwwwwwwwwwwwwwwwwwwwwwwwwsdwwasdwasdwasdwasdwwasdwasdwasdwasdwwdwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdw",
-//         gitLink: "",
-//         viewLink: "",
-//         status: "favorite",
-//     }, {
-//         id:4,
-//         img: project_1,
-//         subTitle: "Website",
-//         title:"Project 1",
-//         description: "wasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwasdwasdwwdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdw",
-//         gitLink: "",
-//         viewLink: "",
-//         status: "favorite",
-//     },{
-//         id:5,
-//         img: project_1,
-//         subTitle: "Website",
-//         title:"Project 1",
-//         description: "wasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwasdwasdwwdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdw",
-//         gitLink: "",
-//         viewLink: "",
-//         status: "favorite",
-//     }, {
-//         id:6,
-//         img: project_2,
-//         subTitle: "Website",
-//         title:"Project Project",
-//         description: "wasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwdwwasdwasdwasdwasdwv",
-//         gitLink: "",
-//         viewLink: "",
-//         status: "educational",
-//     },{
-//         id:7,
-//         img: project_2,
-//         subTitle: "Website",
-//         title:"Project Project",
-//         description: "wasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdwwasdwdwwasdwasdwasdwasdwv",
-//         gitLink: "",
-//         viewLink: "",
-//         status: "educational",
-//     }, {
-//         id:8,
-//         img: project_3,
-//         subTitle: "Website",
-//         title:"Bee BeeEEE BEEEEEEE",
-//         description: "wasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdw",
-//         gitLink: "",
-//         viewLink: "",
-//         status: "in progress",
-//     },{
-//         id:9,
-//         img: project_3,
-//         subTitle: "Website",
-//         title:"Bee BeeEEE BEEEEEEE",
-//         description: "wasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdw",
-//         gitLink: "",
-//         viewLink: "",
-//         status: "in progress",
-//     },{
-//         id:10,
-//         img: project_3,
-//         subTitle: "Website",
-//         title:"Bee BeeEEE BEEEEEEE",
-//         description: "wasdwasdwasdwasdwwasdwasdwasdwasdwwasdwasdwasdwasdw",
-//         gitLink: "",
-//         viewLink: "",
-//         status: "in progress",
-//     },
-// ]
 function Projects() {
     return (
         <>
@@ -151,7 +58,7 @@ function ProjectCard({projectImg,projectSubTitle,projectTitle,projectDecr,projec
     // хук useInView для отслеживания видимости элемента
     const [ref, inView] = useInView({
         triggerOnce: false, // Чтобы событие сработало только один раз
-        threshold: 0.4, // Порог видимости (от 0 до 1)
+        threshold: 0.7, // Порог видимости (от 0 до 1)
     });
     const bgcProjectClass = inView ? 'projects__card-active' : 'projects__card-inactive';
     return (
