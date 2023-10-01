@@ -1,12 +1,15 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.d010ed65.css",
-    "main.js": "/portfolio/static/js/main.3c3955d6.js",
+    "main.css": "/portfolio/static/css/main.fc4e1d30.css",
+    "main.js": "/portfolio/static/js/main.80ad6493.js",
+    "static/media/project_coffeeShop_img.png": "/portfolio/static/media/project_coffeeShop_img.4a3ebbd1b636c6cd25b2.png",
     "static/media/home-profile.webp": "/portfolio/static/media/home-profile.e2ae44ddd8c5ba7cd144.webp",
+    "static/media/project_pulse_img.png": "/portfolio/static/media/project_pulse_img.2427eb917363c87e3a6c.png",
     "static/media/about-profile.webp": "/portfolio/static/media/about-profile.01bcd8426bd0673994f9.webp",
-    "static/media/project-2.jpg": "/portfolio/static/media/project-2.6a46ba3b72b91d60ec9c.jpg",
-    "static/media/project-3.jpg": "/portfolio/static/media/project-3.5080e05bc2c0cd210e06.jpg",
-    "static/media/project-1.jpg": "/portfolio/static/media/project-1.ea3209f7de1f5f744d1b.jpg",
+    "static/media/project_volti_img.png": "/portfolio/static/media/project_volti_img.6513c1495c0ddfbd8a02.png",
+    "static/media/project_eduweb_img.png": "/portfolio/static/media/project_eduweb_img.a099e9f5943e83223c30.png",
+    "static/media/project_uber_img.png": "/portfolio/static/media/project_uber_img.e5472ddd32f196c6cf45.png",
+    "static/media/project_aboutMe_img.png": "/portfolio/static/media/project_aboutMe_img.daa1abb735cfb70712a9.png",
     "static/media/instagram_icon.svg": "/portfolio/static/media/instagram_icon.6896bd5b730d6dc265d66aa594238f84.svg",
     "static/media/reactjs-line.svg": "/portfolio/static/media/reactjs-line.1089768186ae7ccc54fd9fa4df6bdb21.svg",
     "static/media/sass_icon.svg": "/portfolio/static/media/sass_icon.446146b06f0613ae30f3570cccd5aad5.svg",
@@ -16,10 +19,10 @@
     "static/media/random-lines.svg": "/portfolio/static/media/random-lines.3db1443b93c14f82f3934968adb65c9b.svg",
     "static/media/view_icon.svg": "/portfolio/static/media/view_icon.96020b46e504ba7b22a5b23fbb17a206.svg",
     "static/media/sun-line.svg": "/portfolio/static/media/sun-line.2f6669c64ca675b09c857d0b4350c868.svg",
-    "index.html": "/portfolio/index.html",
     "static/media/curved-arrow.svg": "/portfolio/static/media/curved-arrow.1fcb6f330e841f4afb6e7424d9ee5c92.svg",
     "static/media/js_icon.svg": "/portfolio/static/media/js_icon.e48a9464838b1afeb49357c3587fde76.svg",
     "static/media/moon-line.svg": "/portfolio/static/media/moon-line.e6b15b56372c1ed5d535be457c85ef3a.svg",
+    "index.html": "/portfolio/index.html",
     "static/media/html5-fill.svg": "/portfolio/static/media/html5-fill.067dcb35f1e0c69f8ca10fcf4104df82.svg",
     "static/media/send-plane-fill.svg": "/portfolio/static/media/send-plane-fill.fa24d66ea7548a789aab39837040a847.svg",
     "static/media/npmjs-line.svg": "/portfolio/static/media/npmjs-line.f548bc4cd1e9b51d0627f7753c1966a1.svg",
@@ -28,11 +31,11 @@
     "static/media/arrow-down-s-line.svg": "/portfolio/static/media/arrow-down-s-line.6e84b53cfae5719c72700d0009c0d140.svg",
     "static/media/arrow-up-s-line.svg": "/portfolio/static/media/arrow-up-s-line.98f208400f1414048861f8940492d922.svg",
     "static/media/menu-line.svg": "/portfolio/static/media/menu-line.7fd6d93d607cee66dcbff7e8d9d07065.svg",
-    "main.d010ed65.css.map": "/portfolio/static/css/main.d010ed65.css.map",
-    "main.3c3955d6.js.map": "/portfolio/static/js/main.3c3955d6.js.map"
+    "main.fc4e1d30.css.map": "/portfolio/static/css/main.fc4e1d30.css.map",
+    "main.80ad6493.js.map": "/portfolio/static/js/main.80ad6493.js.map"
   },
   "entrypoints": [
-    "static/css/main.d010ed65.css",
-    "static/js/main.3c3955d6.js"
+    "static/css/main.fc4e1d30.css",
+    "static/js/main.80ad6493.js"
   ]
 }
