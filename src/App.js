@@ -1,28 +1,26 @@
 import './styles/common.css'
 import Preloader from "./components/Preloader/Preloader"
-import Header from "./components/Header/Header";
-import Main from "./components/Main/Main";
-import Footer from "./components/Footer/Footer";
-import ScrollButton from "./components/ScrollButton/ScrollButton";
-import {useEffect, useState} from "react";
+import Header from "./components/Header/Header"
+import Main from "./components/Main/Main"
+import Footer from "./components/Footer/Footer"
+import ScrollButton from "./components/ScrollButton/ScrollButton"
+import {useEffect, useState} from "react"
 
 function App() {
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false)
     useEffect(() => {
-        const handleLoad = () => {
+        const delayMilliseconds = 500;
+        const delayTimer = setTimeout(() => {
             setIsLoaded(true);
-        };
-        window.addEventListener("load", handleLoad);
+        }, delayMilliseconds);
         return () => {
-            window.removeEventListener("load", handleLoad);
+            clearTimeout(delayTimer);
         };
     }, []);
 
     return (
         <>
-            {!isLoaded ? <Preloader /> : null
-
-            }
+            {!isLoaded ? <Preloader /> : null}
             <>
                 <Header/>
                 <Main/>
