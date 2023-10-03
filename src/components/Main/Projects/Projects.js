@@ -58,7 +58,7 @@ function ProjectCard({projectImg,projectSubTitle,projectTitle,projectDecr,projec
     // хук useInView для отслеживания видимости элемента
     const [ref, inView] = useInView({
         triggerOnce: false, // Чтобы событие сработало только один раз
-        threshold: 0.4, // Порог видимости (от 0 до 1)
+        threshold: 0.7, // Порог видимости (от 0 до 1)
     });
     const bgcProjectClass = inView ? 'projects__card-active' : 'projects__card-inactive';
     return (
