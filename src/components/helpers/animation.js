@@ -16,11 +16,11 @@ export const appOnTheLeftAnimation = {
 export const appOnTheRightAnimation = {
     initial: {
         opacity: 0,
-        x: -100,
+        transform: 'translateX(-100px)',
     },
     animate: {
         opacity: 1,
-        x: 0,
+        transform: 'translateX(0)',
         transition:{
             duration: 1,
             delay: 0.3,
