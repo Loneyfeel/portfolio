@@ -6,69 +6,78 @@ import project_volti_img from "../../../resources/images/projects/project_volti_
 import project_aboutMe_img from "../../../resources/images/projects/project_aboutMe_img.png";
 import project_portfolio_img from "../../../resources/images/projects/project_portfolio_img.png";
 
+function Project (id, img, subTitle, title, description, gitLink, viewLink, status){
+    this.id = id
+    this.img = img
+    this.subTitle = subTitle
+    this.title = title
+    this.description = description
+    this.gitLink = gitLink
+    this.viewLink = viewLink
+    this.status = status
+}
 export const projectData = [
-    {
-        id:1,
-        img: project_coffeeShop_img,
-        subTitle: "Site layout",
-        title:"Coffee Shop",
-        description: "Easy coffee shop website with adaptability",
-        gitLink: "https://github.com/Loneyfeel/educational-projects/tree/main/coffeeShop",
-        viewLink: "https://loneyfeel.github.io/educational-projects/coffeeShop/",
-        status: "educational",
-    },  {
-        id:2,
-        img: project_pulse_img,
-        subTitle: "Site layout",
-        title:"Heart rate monitor magazine",
-        description: "Website-shop for the selection and purchase of the correct heart rate monitor",
-        gitLink: "https://github.com/Loneyfeel/educational-projects/tree/main/pulse",
-        viewLink: "https://loneyfeel.github.io/educational-projects/pulse/",
-        status: "educational",
-    },  {
-        id:3,
-        img: project_uber_img,
-        subTitle: "Site layout",
-        title:"Uber",
-        description: "The site offers drivers to become Uber partners.",
-        gitLink: "https://github.com/Loneyfeel/educational-projects/tree/main/uber",
-        viewLink: "https://loneyfeel.github.io/educational-projects/uber/",
-        status: "educational",
-    }, {
-        id:4,
-        img: project_eduweb_img,
-        subTitle: "Site layout",
-        title:"EduWeb",
-        description: "An online school for teaching various professions with the opportunity to enroll in a course or buy one.",
-        gitLink: "https://github.com/Loneyfeel/educational-projects/tree/main/eduweb",
-        viewLink: "https://loneyfeel.github.io/educational-projects/eduweb/",
-        status: "favorite",
-    },{
-        id:5,
-        img: project_volti_img,
-        subTitle: "Site layout",
-        title:"Volti",
-        description: "This website offers services for the purchase of electric scooters. charging stations, etc.",
-        gitLink: "https://github.com/Loneyfeel/educational-projects/tree/main/volti",
-        viewLink: "https://loneyfeel.github.io/educational-projects/volti/",
-        status: "favorite",
-    }, {
-        id:6,
-        img: project_aboutMe_img,
-        subTitle: "Website",
-        title:"About me",
-        description: "About me - is a website rethinking the creation and distribution of your resumes, portfolios or business cards.",
-        gitLink: "https://github.com/Loneyfeel/about_me",
-        viewLink: "https://about-me-app-94619db01393.herokuapp.com/",
-        status: "in progress",
-    },{
-        id:7,
-        img: project_portfolio_img,
-        subTitle: "Website",
-        title:"My portfolio-website",
-        description: "The site you are on was created as part of improving React skills and creating an adaptive design with a dark theme.",
-        gitLink: "https://github.com/Loneyfeel/portfolio",
-        viewLink: "https://loneyfeel.github.io/portfolio/",
-        status: "favorite",
-    },
+    new Project(
+        1,
+        project_coffeeShop_img,
+        "Site layout",
+        "Coffee Shop",
+        "Easy coffee shop website with adaptability",
+        "https://github.com/Loneyfeel/educational-projects/tree/main/coffeeShop",
+        "https://loneyfeel.github.io/educational-projects/coffeeShop/",
+        "educational"),
+    new Project(
+        2,
+        project_pulse_img,
+        "Site layout",
+        "Heart rate monitor magazine",
+        "Website-shop for the selection and purchase of the correct heart rate monitor",
+        "https://github.com/Loneyfeel/educational-projects/tree/main/pulse",
+        "https://loneyfeel.github.io/educational-projects/pulse/",
+        "educational"),
+    new Project(
+        3,
+        project_uber_img,
+        "Site layout",
+        "Uber",
+        "The site offers drivers to become Uber partners.",
+        "https://github.com/Loneyfeel/educational-projects/tree/main/uber",
+        "https://loneyfeel.github.io/educational-projects/uber/",
+        "educational"),
+    new Project(
+        4,
+        project_eduweb_img,
+        "Site layout",
+        "EduWeb",
+        "An online school for teaching various professions with the opportunity to enroll in a course or buy one.",
+        "https://github.com/Loneyfeel/educational-projects/tree/main/eduweb",
+        "https://loneyfeel.github.io/educational-projects/eduweb/",
+        "favorite"),
+    new Project(
+        5,
+        project_volti_img,
+        "Site layout",
+        "Volti",
+        "This website offers services for the purchase of electric scooters. charging stations, etc.",
+        "https://github.com/Loneyfeel/educational-projects/tree/main/volti",
+        "https://loneyfeel.github.io/educational-projects/volti/",
+        "favorite"),
+    new Project(
+        6,
+        project_aboutMe_img,
+        "Website",
+        "About me",
+        "About me - is a website rethinking the creation and distribution of your resumes, portfolios or business cards.",
+        "https://github.com/Loneyfeel/about_me",
+        "https://about-me-app-94619db01393.herokuapp.com/",
+        "in progress"),
+    new Project(
+        7,
+        project_portfolio_img,
+        "Website",
+        "My portfolio-website",
+        "The site you are on was created as part of improving React skills and creating an adaptive design with a dark theme.",
+        "https://github.com/Loneyfeel/portfolio",
+        "https://loneyfeel.github.io/portfolio/",
+        "favorite"),
 ]
