@@ -64,15 +64,6 @@ export const projectData = [
         "favorite"),
     new Project(
         6,
-        project_aboutMe_img,
-        "Website",
-        "About me",
-        "About me - is a website rethinking the creation and distribution of your resumes, portfolios or business cards.",
-        "https://github.com/Loneyfeel/about_me",
-        "https://about-me-app-94619db01393.herokuapp.com/",
-        "in progress"),
-    new Project(
-        7,
         project_portfolio_img,
         "Website",
         "My portfolio-website",
